@@ -1,4 +1,4 @@
-package br.com.guilhermeevangelista.appium.core.screenshot.impl;
+package br.com.guilhermeevangelista.appium.core.utils.report.screenshot.impl;
 
 import com.google.common.base.Function;
 

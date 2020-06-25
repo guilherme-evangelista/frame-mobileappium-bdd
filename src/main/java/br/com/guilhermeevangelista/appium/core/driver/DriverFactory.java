@@ -1,4 +1,4 @@
-package br.com.guilhermeevangelista.appium.core;
+package br.com.guilhermeevangelista.appium.core.driver;
 
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;

@@ -18,6 +18,31 @@
                     <target>8</target>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>com.trivago.rta</groupId>
+                <artifactId>cluecumber-report-plugin</artifactId>
+                <version>${cluecumber.version}</version>
+                <executions>
+                    <execution>
+                        <id>report</id>
+                        <phase>post-integration-test</phase>
+                        <goals>
+                            <goal>reporting</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <customPageTitle>Frame RestAssured</customPageTitle>
+                    <sourceJsonReportDirectory>${project.build.directory}/cucumber-report</sourceJsonReportDirectory>
+                    <generatedHtmlReportDirectory>${project.build.directory}/generated-report</generatedHtmlReportDirectory>
+                    <customParameters>
+                        <FrameWork>Appium Mobile Bdd</FrameWork>
+                        <Nome_do_apk_de_teste>CTAppium</Nome_do_apk_de_teste>
+                        <Versão>1.0</Versão>
+                        <!--                        <_Text>This is a long text that is displayed without the key. This can be used to display longer texts in the report!</_Text>-->
+                    </customParameters>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
@@ -27,6 +52,9 @@
         <fakker.version>1.0.2</fakker.version>
         <log4j.version>1.2.17</log4j.version>
         <reportbuilder.version>1.0.3</reportbuilder.version>
+        <gherkin.version>13.0.0</gherkin.version>
+        <junit.version>5.7.0-M1</junit.version>
+        <cluecumber.version>2.5.0</cluecumber.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
@@ -65,7 +93,7 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
-            <version>5.7.0-M1</version>
+            <version>${junit.version}</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/com.github.javafaker/javafaker -->
@@ -74,6 +102,21 @@
             <artifactId>javafaker</artifactId>
             <version>${fakker.version}</version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.trivago.rta/cluecumber-report-plugin -->
+        <dependency>
+            <groupId>com.trivago.rta</groupId>
+            <artifactId>cluecumber-report-plugin</artifactId>
+            <version>${cluecumber.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/io.cucumber/gherkin -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>gherkin</artifactId>
+            <version>${gherkin.version}</version>
+        </dependency>
+
     </dependencies>
 
 

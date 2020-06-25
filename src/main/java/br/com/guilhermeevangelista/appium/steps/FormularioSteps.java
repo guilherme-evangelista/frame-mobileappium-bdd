@@ -6,7 +6,7 @@ import io.cucumber.java.pt.*;
 import org.junit.Assert;
 import org.junit.jupiter.api.Assertions;
 
-import static br.com.guilhermeevangelista.appium.core.BasePage.tirarPrint;
+import static br.com.guilhermeevangelista.appium.core.driver.BasePage.tirarPrint;
 
 public class FormularioSteps{
 
@@ -15,6 +15,7 @@ public class FormularioSteps{
 
     private static String nome;
     private static String data;
+    private int procentagem;
 
     @Dado("que acesso o menu formulario")
     public void queAcessoOMenuFormulario() {
@@ -90,5 +91,21 @@ public class FormularioSteps{
     @E("escolho a hora {int}:{int}")
     public void escolhoAHora(int hora, int minutos) {
         
+    }
+
+    @Quando("movo o seekbar para {int}%")
+    public void movoOSeekbarPara(int porcentagem) {
+        this.procentagem = porcentagem;
+        formularioPage.moverSeekBar(porcentagem);
+    }
+
+    @E("clico em salvar")
+    public void clicoEmSalvar() {
+        formularioPage.clicarSalvar();
+    }
+
+    @Entao("valido que o valor do seek cadastrado eh o mesmo selecionado")
+    public void validoQueOValorDoSeekCadastradoEhOMesmoSelecionado() {
+        Assertions.assertTrue(formularioPage.getSliderCadastrado().endsWith(String.valueOf(procentagem)));
     }
 }

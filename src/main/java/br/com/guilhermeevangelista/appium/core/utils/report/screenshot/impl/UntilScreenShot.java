@@ -1,4 +1,4 @@
-package br.com.guilhermeevangelista.appium.core.screenshot.impl;
+package br.com.guilhermeevangelista.appium.core.utils.report.screenshot.impl;
 
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;

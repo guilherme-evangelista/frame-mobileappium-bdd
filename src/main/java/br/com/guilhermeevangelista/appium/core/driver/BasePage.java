@@ -1,6 +1,6 @@
-package br.com.guilhermeevangelista.appium.core;
+package br.com.guilhermeevangelista.appium.core.driver;
 
-import br.com.guilhermeevangelista.appium.core.screenshot.ScenarioRepository;
+import br.com.guilhermeevangelista.appium.core.utils.report.screenshot.ScenarioRepository;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
@@ -10,7 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import static br.com.guilhermeevangelista.appium.core.DriverFactory.getDriver;
+import static br.com.guilhermeevangelista.appium.core.driver.DriverFactory.getDriver;
 
 public class BasePage {
     public BasePage(){

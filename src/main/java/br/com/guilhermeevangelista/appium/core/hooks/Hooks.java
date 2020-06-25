@@ -1,8 +1,8 @@
 package br.com.guilhermeevangelista.appium.core.hooks;
 
-import br.com.guilhermeevangelista.appium.core.DriverFactory;
-import br.com.guilhermeevangelista.appium.core.screenshot.ScenarioRepository;
-import br.com.guilhermeevangelista.appium.core.utils.AppiumServerUtils;
+import br.com.guilhermeevangelista.appium.core.driver.DriverFactory;
+import br.com.guilhermeevangelista.appium.core.utils.report.screenshot.ScenarioRepository;
+import br.com.guilhermeevangelista.appium.core.driver.AppiumServerUtils;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;

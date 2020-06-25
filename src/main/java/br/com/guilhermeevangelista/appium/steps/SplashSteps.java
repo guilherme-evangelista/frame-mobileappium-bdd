@@ -6,7 +6,7 @@ import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.Quando;
 import org.junit.Assert;
 
-import static br.com.guilhermeevangelista.appium.core.BasePage.tirarPrint;
+import static br.com.guilhermeevangelista.appium.core.driver.BasePage.tirarPrint;
 
 public class SplashSteps {
 

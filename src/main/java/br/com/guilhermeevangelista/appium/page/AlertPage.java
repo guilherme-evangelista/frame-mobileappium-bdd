@@ -1,6 +1,6 @@
 package br.com.guilhermeevangelista.appium.page;
 
-import br.com.guilhermeevangelista.appium.core.BasePage;
+import br.com.guilhermeevangelista.appium.core.driver.BasePage;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 

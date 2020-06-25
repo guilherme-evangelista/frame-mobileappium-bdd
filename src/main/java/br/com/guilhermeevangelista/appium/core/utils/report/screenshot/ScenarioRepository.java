@@ -1,6 +1,6 @@
-package br.com.guilhermeevangelista.appium.core.screenshot;
+package br.com.guilhermeevangelista.appium.core.utils.report.screenshot;
 
-import br.com.guilhermeevangelista.appium.core.DriverFactory;
+import br.com.guilhermeevangelista.appium.core.driver.DriverFactory;
 import io.cucumber.java.Scenario;
 
 import java.util.HashMap;

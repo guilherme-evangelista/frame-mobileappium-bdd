@@ -1,8 +1,9 @@
 package br.com.guilhermeevangelista.appium.page;
 
-import br.com.guilhermeevangelista.appium.core.BasePage;
+import br.com.guilhermeevangelista.appium.core.driver.BasePage;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
+import org.junit.Assert;
 
 public class FormularioPage extends BasePage {
     @AndroidFindBy(accessibility = "nome")
@@ -23,6 +24,9 @@ public class FormularioPage extends BasePage {
     @AndroidFindBy(xpath = "//android.widget.TextView[starts-with(@text, 'Console:')]")
     private MobileElement consoleCadastrado;
 
+    @AndroidFindBy(xpath = "//android.widget.TextView[starts-with(@text, 'Slider:')]")
+    private MobileElement seekCadastrado;
+
     @AndroidFindBy(xpath = "//android.widget.TextView[starts-with(@text, 'Switch:')]")
     private MobileElement switchCadastrado;
 
@@ -37,6 +41,9 @@ public class FormularioPage extends BasePage {
 
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='2000' and @index='2']")
     private MobileElement ano2000;
+
+    @AndroidFindBy(xpath = "//android.widget.SeekBar[@content-desc='slid']")
+    private MobileElement seekBar;
 
 
 
@@ -89,6 +96,11 @@ public class FormularioPage extends BasePage {
         return super.getText(switchCadastrado);
     }
 
+    public String getSliderCadastrado(){
+        tirarPrint();
+        return super.getText(seekCadastrado);
+    }
+
     public void clicarNoCampoDeData(){
         super.clicarElementoPorTexto("01/01/2000");
     }
@@ -129,5 +141,15 @@ public class FormularioPage extends BasePage {
 
     public boolean verificarPresencaDeElementoPorText(String texto){
         return existeElementoPorTexto(texto);
+    }
+
+    public void moverSeekBar(double porcentagem){
+        int delta = 40;
+        Assert.assertTrue(porcentagem >= 0 && porcentagem <= 100);
+        int xInicial = seekBar.getLocation().x + delta;
+        int y = seekBar.getLocation().y + (seekBar.getSize().height/2);
+        int x = (int) (xInicial + ((seekBar.getSize().width - 2 * delta) * (porcentagem/2)));
+        super.tap(x, y);
+        esperar(2);
     }
 }

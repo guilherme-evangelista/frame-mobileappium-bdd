@@ -1,4 +1,4 @@
-package br.com.guilhermeevangelista.appium.core.utils;
+package br.com.guilhermeevangelista.appium.core.driver;
 
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;

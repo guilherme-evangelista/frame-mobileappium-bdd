@@ -1,7 +1,7 @@
-package br.com.guilhermeevangelista.appium.core.screenshot;
+package br.com.guilhermeevangelista.appium.core.utils.report.screenshot;
 
-import br.com.guilhermeevangelista.appium.core.screenshot.impl.RunScreenshot;
-import br.com.guilhermeevangelista.appium.core.screenshot.impl.UntilScreenShot;
+import br.com.guilhermeevangelista.appium.core.utils.report.screenshot.impl.RunScreenshot;
+import br.com.guilhermeevangelista.appium.core.utils.report.screenshot.impl.UntilScreenShot;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 
