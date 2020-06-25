@@ -103,6 +103,13 @@
             <version>${fakker.version}</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/log4j/log4j -->
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+
         <!-- https://mvnrepository.com/artifact/com.trivago.rta/cluecumber-report-plugin -->
         <dependency>
             <groupId>com.trivago.rta</groupId>
