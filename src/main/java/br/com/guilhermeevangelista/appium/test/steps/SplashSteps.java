@@ -1,10 +1,12 @@
-package br.com.guilhermeevangelista.appium.steps;
+package br.com.guilhermeevangelista.appium.test.steps;
 
-import br.com.guilhermeevangelista.appium.page.MenuPage;
-import br.com.guilhermeevangelista.appium.page.SplashPage;
+import br.com.guilhermeevangelista.appium.test.page.MenuPage;
+import br.com.guilhermeevangelista.appium.test.page.SplashPage;
 import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.Quando;
 import org.junit.Assert;
+
+import java.net.MalformedURLException;
 
 import static br.com.guilhermeevangelista.appium.core.driver.BasePage.tirarPrint;
 
@@ -20,7 +22,7 @@ public class SplashSteps {
     }
 
     @Quando("a tela de splash sumir")
-    public void aTelaDeSplashSumir() {
+    public void aTelaDeSplashSumir() throws MalformedURLException {
         Assert.assertTrue(splashPage.verificarSplashNaTela());
         tirarPrint();
         splashPage.aguardarSplashSumir();

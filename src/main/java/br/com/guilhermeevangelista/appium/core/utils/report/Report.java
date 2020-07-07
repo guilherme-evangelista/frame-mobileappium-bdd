@@ -49,7 +49,7 @@ public class Report {
 
             String line;
             while ((line = reader.readLine()) != null) {
-                output.append(line + "\n");
+                output.append(line).append("\n");
             }
 
             int exitVal = process.waitFor();
@@ -61,5 +61,9 @@ public class Report {
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }
+    }
+
+    public static void main(String[] args) {
+        gerarRelarotioClueCumber();
     }
 }

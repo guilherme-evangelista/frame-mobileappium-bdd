@@ -1,15 +1,17 @@
-package br.com.guilhermeevangelista.appium.page;
+package br.com.guilhermeevangelista.appium.test.page;
 
 import br.com.guilhermeevangelista.appium.core.driver.BasePage;
+
+import java.net.MalformedURLException;
 
 public class SplashPage extends BasePage {
 
 
-    public boolean verificarSplashNaTela(){
+    public boolean verificarSplashNaTela() throws MalformedURLException {
         return super.existeElementoPorTexto("Splash!");
     }
 
-    public void aguardarSplashSumir(){
+    public void aguardarSplashSumir() throws MalformedURLException {
         super.aguardarElementoSumir(super.obterElementoPorText("Splash!"));
     }
 

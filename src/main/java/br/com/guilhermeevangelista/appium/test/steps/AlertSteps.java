@@ -1,11 +1,13 @@
-package br.com.guilhermeevangelista.appium.steps;
+package br.com.guilhermeevangelista.appium.test.steps;
 
-import br.com.guilhermeevangelista.appium.page.AlertPage;
-import br.com.guilhermeevangelista.appium.page.MenuPage;
+import br.com.guilhermeevangelista.appium.test.page.AlertPage;
+import br.com.guilhermeevangelista.appium.test.page.MenuPage;
 import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.Então;
 import io.cucumber.java.pt.Quando;
 import org.junit.Assert;
+
+import java.net.MalformedURLException;
 
 public class AlertSteps {
 
@@ -18,7 +20,7 @@ public class AlertSteps {
     }
 
     @Quando("confirmo o alerta de confirmacao")
-    public void confirmoOAlertaDeConfirmacao() {
+    public void confirmoOAlertaDeConfirmacao() throws MalformedURLException {
         alertPage.clicarAlertaConfirm();
 
         Assert.assertEquals("Confirma a operação?", alertPage.getMensagemoAlert());
@@ -32,13 +34,13 @@ public class AlertSteps {
 
 
     @Quando("seleciono o alerta simples e clico fora dele")
-    public void selecionoOAlertaSimplesEClicoForaDele() {
+    public void selecionoOAlertaSimplesEClicoForaDele() throws MalformedURLException {
         alertPage.clicarAlertaSimples();
         alertPage.clicarForaDoAlert();
     }
 
     @Então("valido que voltei pra tela de alertas")
-    public void validoQueVolteiPraTelaDeAlertas() {
+    public void validoQueVolteiPraTelaDeAlertas() throws MalformedURLException {
         Assert.assertTrue(alertPage.estouNoMenu());
     }
 }

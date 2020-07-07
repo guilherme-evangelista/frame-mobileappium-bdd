@@ -1,8 +1,10 @@
-package br.com.guilhermeevangelista.appium.page;
+package br.com.guilhermeevangelista.appium.test.page;
 
 import br.com.guilhermeevangelista.appium.core.driver.BasePage;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
+
+import java.net.MalformedURLException;
 
 public class MenuPage extends BasePage {
 
@@ -41,7 +43,7 @@ public class MenuPage extends BasePage {
         tirarPrint();
     }
 
-    public boolean isFormularioVisivel(){
+    public boolean isFormularioVisivel() throws MalformedURLException {
         return super.existeElementoPorTexto("Formulario");
     }
 
@@ -61,5 +63,5 @@ public class MenuPage extends BasePage {
         super.clicarElemento(mnAlertas);
         tirarPrint();
     }
-
+    
 }

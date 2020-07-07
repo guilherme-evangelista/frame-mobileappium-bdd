@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(strict = true,
         plugin = {"pretty", "json:target/cucumber-report/cucumber.json"},
         features = {"src/main/resources/features"},
-        glue = {"br/com/guilhermeevangelista/appium/steps", "br/com/guilhermeevangelista/appium/core/hooks"},
+        glue = {"br/com/guilhermeevangelista/appium/test/steps", "br/com/guilhermeevangelista/appium/core/hooks"},
         tags = {"@regressivo"})
 
 public class RunTest {

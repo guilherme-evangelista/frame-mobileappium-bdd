@@ -32,6 +32,7 @@
                     </execution>
                 </executions>
                 <configuration>
+                    <customCss>src\main\java\br\com\guilhermeevangelista\appium\core\utils\report\custom.css</customCss>
                     <customPageTitle>Frame RestAssured</customPageTitle>
                     <sourceJsonReportDirectory>${project.build.directory}/cucumber-report</sourceJsonReportDirectory>
                     <generatedHtmlReportDirectory>${project.build.directory}/generated-report</generatedHtmlReportDirectory>
@@ -48,7 +49,7 @@
 
     <properties>
         <cucumber.version>5.1.3</cucumber.version>
-        <appium.version>7.3.0</appium.version>
+        <appium.version>6.1.0</appium.version>
         <fakker.version>1.0.2</fakker.version>
         <log4j.version>1.2.17</log4j.version>
         <reportbuilder.version>1.0.3</reportbuilder.version>

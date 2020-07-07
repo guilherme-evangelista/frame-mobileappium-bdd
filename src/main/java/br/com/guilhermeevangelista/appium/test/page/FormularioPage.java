@@ -1,9 +1,11 @@
-package br.com.guilhermeevangelista.appium.page;
+package br.com.guilhermeevangelista.appium.test.page;
 
 import br.com.guilhermeevangelista.appium.core.driver.BasePage;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.junit.Assert;
+
+import java.net.MalformedURLException;
 
 public class FormularioPage extends BasePage {
     @AndroidFindBy(accessibility = "nome")
@@ -47,7 +49,7 @@ public class FormularioPage extends BasePage {
 
 
 
-    public void clicarSalvar(){
+    public void clicarSalvar() throws MalformedURLException {
         tirarPrint();
         super.clicarElementoPorTexto("SALVAR");
     }
@@ -59,7 +61,7 @@ public class FormularioPage extends BasePage {
         super.clicarElemento(btnSwitch);
     }
 
-    public void selecionarConsole(String console){
+    public void selecionarConsole(String console) throws MalformedURLException {
         super.selecionarComboBox("console", console);
     }
 
@@ -101,11 +103,11 @@ public class FormularioPage extends BasePage {
         return super.getText(seekCadastrado);
     }
 
-    public void clicarNoCampoDeData(){
+    public void clicarNoCampoDeData() throws MalformedURLException {
         super.clicarElementoPorTexto("01/01/2000");
     }
 
-    public void selecionarAno(int ano){
+    public void selecionarAno(int ano) throws MalformedURLException {
         super.clicarElementoPorTexto("2000");
         if (ano == 2000) {
             super.clicarElemento(ano2000);
@@ -122,7 +124,7 @@ public class FormularioPage extends BasePage {
         else throw new IllegalArgumentException("Valor de mês invalido, selecionar entre 1 e 12");
     }
 
-    public void selecionarDia(int dia){
+    public void selecionarDia(int dia) throws MalformedURLException {
         if (dia>=1 && dia<=31){
             super.clicarElementoPorTexto(String.valueOf(dia));
         }
@@ -130,20 +132,20 @@ public class FormularioPage extends BasePage {
         tirarPrint();
     }
 
-    public void clicarSalvarDemorado() {
+    public void clicarSalvarDemorado() throws MalformedURLException {
         tirarPrint();
         super.clicarElementoPorTexto("SALVAR DEMORADO");
     }
 
-    public void clicarNoBotaoOk() {
+    public void clicarNoBotaoOk() throws MalformedURLException {
         super.clicarElementoPorTexto("OK");
     }
 
-    public boolean verificarPresencaDeElementoPorText(String texto){
+    public boolean verificarPresencaDeElementoPorText(String texto) throws MalformedURLException {
         return existeElementoPorTexto(texto);
     }
 
-    public void moverSeekBar(double porcentagem){
+    public void moverSeekBar(double porcentagem) throws MalformedURLException {
         int delta = 40;
         Assert.assertTrue(porcentagem >= 0 && porcentagem <= 100);
         int xInicial = seekBar.getLocation().x + delta;

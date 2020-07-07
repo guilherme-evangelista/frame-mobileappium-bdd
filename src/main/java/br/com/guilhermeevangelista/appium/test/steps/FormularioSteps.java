@@ -1,10 +1,12 @@
-package br.com.guilhermeevangelista.appium.steps;
+package br.com.guilhermeevangelista.appium.test.steps;
 
-import br.com.guilhermeevangelista.appium.page.FormularioPage;
-import br.com.guilhermeevangelista.appium.page.MenuPage;
+import br.com.guilhermeevangelista.appium.test.page.FormularioPage;
+import br.com.guilhermeevangelista.appium.test.page.MenuPage;
 import io.cucumber.java.pt.*;
 import org.junit.Assert;
 import org.junit.jupiter.api.Assertions;
+
+import java.net.MalformedURLException;
 
 import static br.com.guilhermeevangelista.appium.core.driver.BasePage.tirarPrint;
 
@@ -35,7 +37,7 @@ public class FormularioSteps{
     }
 
     @Quando("preencho os todos os campos e salvo")
-    public void preenchoOsTodosOsCamposESalvo() {
+    public void preenchoOsTodosOsCamposESalvo() throws MalformedURLException {
         formularioPage.escreverCampoNome("Guilherme Gomes");
 
         formularioPage.selecionarConsole("Nintendo Switch");
@@ -47,7 +49,7 @@ public class FormularioSteps{
     }
 
     @Quando("preencho os todos os campos e salvo demorado")
-    public void preenchoOsTodosOsCamposESalvoDemorado() {
+    public void preenchoOsTodosOsCamposESalvoDemorado() throws MalformedURLException {
         formularioPage.escreverCampoNome("Guilherme Gomes");
 
         formularioPage.selecionarConsole("Nintendo Switch");
@@ -59,7 +61,7 @@ public class FormularioSteps{
     }
 
     @Quando("escolho a data {string}{string}{string}")
-    public void escolhoAData(String dia, String mes, String ano) {
+    public void escolhoAData(String dia, String mes, String ano) throws MalformedURLException {
         data = Integer.valueOf(dia)+"/"+Integer.valueOf(mes)+"/"+ano;
         formularioPage.clicarNoCampoDeData();
         formularioPage.selecionarAno(Integer.parseInt(ano));
@@ -77,13 +79,13 @@ public class FormularioSteps{
     }
 
     @Então("valido que o menu do formulario esta sendo exibido")
-    public void validoQueOMenuDoFormularioEstaSendoExibido() {
+    public void validoQueOMenuDoFormularioEstaSendoExibido() throws MalformedURLException {
         Assertions.assertTrue(menuPage.isFormularioVisivel());
         tirarPrint();
     }
 
     @Entao("valido que a data selecionada no formulario esta sendo exibida")
-    public void validoQueADataSelecionadaNoFormularioEstaSendoExibida() {
+    public void validoQueADataSelecionadaNoFormularioEstaSendoExibida() throws MalformedURLException {
         Assert.assertTrue(formularioPage.verificarPresencaDeElementoPorText(data));
         tirarPrint();
     }
@@ -94,13 +96,13 @@ public class FormularioSteps{
     }
 
     @Quando("movo o seekbar para {int}%")
-    public void movoOSeekbarPara(int porcentagem) {
+    public void movoOSeekbarPara(int porcentagem) throws MalformedURLException {
         this.procentagem = porcentagem;
         formularioPage.moverSeekBar(porcentagem);
     }
 
     @E("clico em salvar")
-    public void clicoEmSalvar() {
+    public void clicoEmSalvar() throws MalformedURLException {
         formularioPage.clicarSalvar();
     }
 

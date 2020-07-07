@@ -15,24 +15,23 @@ public class DriverFactory {
 
     public static AndroidDriver<MobileElement> getDriver(){
         if(driver == null){
-            createDriver();
+            try {
+                createDriver();
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            }
         }
         return driver;
     }
 
-    private static void createDriver(){
+    private static void createDriver() throws MalformedURLException {
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
         desiredCapabilities.setCapability("platformName", "Android");
         desiredCapabilities.setCapability("deviceName", "1252630c");
         desiredCapabilities.setCapability("automationName", "uiautomator2");
-        desiredCapabilities.setCapability(MobileCapabilityType.APP, System.getProperty("user.dir")+"/src/main/resources/CTAppium_1_0.apk");
+        desiredCapabilities.setCapability(MobileCapabilityType.APP, System.getProperty("user.dir")+"/src/main/resources/app/CTAppium_1_0.apk");
 
-        try {
-            driver = new AndroidDriver<>(new URL("http://localhost:4723/wd/hub"), desiredCapabilities);
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
-
+        driver = new AndroidDriver<>(new URL("http://localhost:4723/wd/hub"), desiredCapabilities);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 

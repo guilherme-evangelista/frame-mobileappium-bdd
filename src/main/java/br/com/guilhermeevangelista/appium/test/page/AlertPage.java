@@ -1,8 +1,10 @@
-package br.com.guilhermeevangelista.appium.page;
+package br.com.guilhermeevangelista.appium.test.page;
 
 import br.com.guilhermeevangelista.appium.core.driver.BasePage;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
+
+import java.net.MalformedURLException;
 
 public class AlertPage extends BasePage {
 
@@ -21,15 +23,15 @@ public class AlertPage extends BasePage {
     @AndroidFindBy(xpath = "//android.widget.Button[@text='SAIR']")
     private MobileElement btnSair;
 
-    public void clicarAlertaSimples(){
+    public void clicarAlertaSimples() throws MalformedURLException {
         super.clicarElementoPorTexto("ALERTA SIMPLES");
     }
 
-    public void clicarAlertaConfirm(){
+    public void clicarAlertaConfirm() throws MalformedURLException {
         super.clicarElementoPorTexto("ALERTA CONFIRM");
     }
 
-    public void clicarForaDoAlert(){
+    public void clicarForaDoAlert() throws MalformedURLException {
         esperar(1);
         super.tap(100, 150);
     }
@@ -57,7 +59,7 @@ public class AlertPage extends BasePage {
         super.clicarElemento(btnNegar);
     }
 
-    public boolean estouNoMenu(){
+    public boolean estouNoMenu() throws MalformedURLException {
         return super.existeElementoPorTexto("ALERTA CONFIRM");
     }
 
